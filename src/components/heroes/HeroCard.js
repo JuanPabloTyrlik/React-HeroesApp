@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export const HeroCard = ({
     id,
@@ -8,9 +8,13 @@ export const HeroCard = ({
     first_appearance,
     characters,
 }) => {
+    const history = useHistory();
+
+    const handleClick = () => history.push(`/hero/${id}`);
+
     return (
         <div className="card ms-3" style={{ maxWidth: 540 }}>
-            <div className="row no-gutters">
+            <div className="row no-gutters" onClick={handleClick}>
                 <div className="col-md-4">
                     <img
                         src={`./assets/heroes/${id}.jpg`}
