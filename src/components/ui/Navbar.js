@@ -1,18 +1,27 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
+import { AuthContext } from '../../auth/AuthContext';
 import { SearchContext } from '../../routers/DashboardRouter';
+import { TYPES } from '../../types/types';
 
 export const Navbar = () => {
     const { searchValue, setSearchValue } = useContext(SearchContext);
+    const { user, dispatch } = useContext(AuthContext);
+    const history = useHistory();
 
     const handleChange = (e) => {
         e.preventDefault();
         setSearchValue(e.target.value);
     };
 
-    const handleReset = (e) => {
+    const handleReset = () => {
         setSearchValue('');
+    };
+
+    const handleLogOut = () => {
+        dispatch({ type: TYPES.LOGOUT });
+        history.replace('/login');
     };
 
     return (
@@ -60,14 +69,15 @@ export const Navbar = () => {
                             value={searchValue}
                         />
                     </form>
-                    <NavLink
-                        activeClassName="active"
-                        className="nav-item nav-link"
-                        exact
-                        to="/login"
+                    <span className="navbar-text text-success">
+                        {user.name}
+                    </span>
+                    <button
+                        className="nav-item nav-link btn"
+                        onClick={handleLogOut}
                     >
                         Logout
-                    </NavLink>
+                    </button>
                 </ul>
             </div>
         </nav>
