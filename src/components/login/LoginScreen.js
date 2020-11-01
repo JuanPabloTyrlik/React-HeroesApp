@@ -12,10 +12,12 @@ export const LoginScreen = () => {
 
     const [userName, setUserName] = useState('');
 
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
     const handleLogin = (e) => {
         e.preventDefault();
         dispatch({ type: TYPES.LOGIN, payload: { name: userName } });
-        history.replace('/');
+        history.replace(lastPath);
     };
 
     const handleChange = (e) => {
