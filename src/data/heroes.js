@@ -160,4 +160,12 @@ export const heroes = [
         first_appearance: 'The Fantastic Four #48',
         characters: 'Norrin Radd',
     },
+    {
+        id: 'marvel-punisher',
+        superhero: 'The Punisher',
+        publisher: 'Marvel Comics',
+        alter_ego: 'Frank Castle',
+        first_appearance: 'The Amazing Spider-Man # 129',
+        characters: 'Frank Castle',
+    },
 ];

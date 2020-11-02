@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import '../../styles/style.css';
 
 export const HeroCard = ({
     id,
@@ -13,7 +14,7 @@ export const HeroCard = ({
     const handleClick = () => history.push(`/hero/${id}`);
 
     return (
-        <div className="card ms-3" style={{ maxWidth: 540 }}>
+        <div className="card ms-3" style={{ maxWidth: 540, cursor: 'pointer' }}>
             <div className="row no-gutters" onClick={handleClick}>
                 <div className="col-md-4">
                     <img
@@ -34,7 +35,7 @@ export const HeroCard = ({
                                 {first_appearance}
                             </small>
                         </p>
-                        <Link to={`/hero/${id}`}>Más...</Link>
+                        <span className="link">Más...</span>
                     </div>
                 </div>
             </div>
