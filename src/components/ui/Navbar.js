@@ -67,7 +67,7 @@ export const Navbar = () => {
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
-                    {location.pathname !== '/search' && (
+                    {['/marvel', '/dc'].includes(location.pathname) && (
                         <form
                             className="form-inline my-2 my-lg-0"
                             onSubmit={(e) => e.preventDefault()}
