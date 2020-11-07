@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on LoginScreen should render correctly 1`] = `
+<div
+  className="container mt-5"
+>
+  <h1>
+    Login Screen
+  </h1>
+  <hr />
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      aria-label="Username"
+      className="form-control col-md-3"
+      onChange={[Function]}
+      placeholder="Username"
+      style={
+        Object {
+          "marginBottom": "1rem",
+        }
+      }
+      type="text"
+      value=""
+    />
+    <button
+      className="btn btn-primary"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;
